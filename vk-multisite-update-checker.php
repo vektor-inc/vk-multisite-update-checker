@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VK Multisite Update Checker
  * Description: マルチサイトのネットワーク管理画面で VK 製品（テーマ・プラグイン）の更新通知を受け取れるようにする軽量プラグイン。サイトネットワークで有効化して使用してください。
- * Version: 0.2.0
+ * Version: 0.3.0
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Network: true
@@ -28,6 +28,7 @@ function vk_multisite_update_checker_init() {
 			WP_CONTENT_DIR . '/themes/katawara/vendor/autoload.php',
 			WP_PLUGIN_DIR . '/lightning-g3-pro-unit/vendor/autoload.php',
 			WP_PLUGIN_DIR . '/vk-blocks-pro/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/lightning-g3-evergreen/vendor/autoload.php',
 		);
 		$loaded = false;
 		foreach ( $autoload_candidates as $autoload ) {
@@ -96,6 +97,16 @@ function vk_multisite_update_checker_init() {
 			'license_key' => '',
 			'license_from' => '',
 			'branch'      => 'master',
+		),
+		// Lightning G3 Evergreen プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'lightning-g3-evergreen',
+			'check_file'  => WP_PLUGIN_DIR . '/lightning-g3-evergreen/lightning-g3-evergreen.php',
+			'main_file'   => WP_PLUGIN_DIR . '/lightning-g3-evergreen/lightning-g3-evergreen.php',
+			'metadata_url' => 'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
+			'license_key' => '',
+			'license_from' => '',
 		),
 	);
 
