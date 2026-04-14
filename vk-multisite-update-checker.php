@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VK Multisite Update Checker
  * Description: マルチサイトのネットワーク管理画面で VK 製品（テーマ・プラグイン）の更新通知を受け取れるようにする軽量プラグイン。サイトネットワークで有効化して使用してください。
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Network: true
@@ -25,13 +25,17 @@ function vk_multisite_update_checker_init() {
 	if ( ! class_exists( 'YahnisElsts\PluginUpdateChecker\v5\PucFactory' ) ) {
 		$autoload_candidates = array(
 			WP_CONTENT_DIR . '/themes/lightning-pro/vendor/autoload.php',
+			WP_CONTENT_DIR . '/themes/katawara/vendor/autoload.php',
 			WP_PLUGIN_DIR . '/lightning-g3-pro-unit/vendor/autoload.php',
 			WP_PLUGIN_DIR . '/vk-blocks-pro/vendor/autoload.php',
 		);
 		$loaded = false;
 		foreach ( $autoload_candidates as $autoload ) {
-			if ( file_exists( $autoload ) ) {
-				require_once $autoload;
+			if ( ! file_exists( $autoload ) ) {
+				continue;
+			}
+			require_once $autoload;
+			if ( class_exists( 'YahnisElsts\PluginUpdateChecker\v5\PucFactory' ) ) {
 				$loaded = true;
 				break;
 			}
@@ -51,6 +55,16 @@ function vk_multisite_update_checker_init() {
 			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=lightning-pro',
 			'license_key' => 'lightning-pro-license-key',
 			'license_from' => 'option',
+		),
+		// Katawara テーマ.
+		array(
+			'type'        => 'theme',
+			'slug'        => 'katawara',
+			'check_file'  => WP_CONTENT_DIR . '/themes/katawara/style.css',
+			'main_file'   => WP_CONTENT_DIR . '/themes/katawara/functions.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=katawara',
+			'license_key' => '',
+			'license_from' => '',
 		),
 		// Lightning G3 Pro Unit プラグイン.
 		array(
