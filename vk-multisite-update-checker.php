@@ -31,8 +31,11 @@ function vk_multisite_update_checker_init() {
 		);
 		$loaded = false;
 		foreach ( $autoload_candidates as $autoload ) {
-			if ( file_exists( $autoload ) ) {
-				require_once $autoload;
+			if ( ! file_exists( $autoload ) ) {
+				continue;
+			}
+			require_once $autoload;
+			if ( class_exists( 'YahnisElsts\PluginUpdateChecker\v5\PucFactory' ) ) {
 				$loaded = true;
 				break;
 			}
