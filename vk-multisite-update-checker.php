@@ -194,7 +194,7 @@ function vk_multisite_update_checker_init() {
 			'slug'        => 'vk-add-fonts-for-block-editor',
 			'check_file'  => WP_PLUGIN_DIR . '/vk-add-fonts-for-block-editor/vk-add-fonts-for-block-editor.php',
 			'main_file'   => WP_PLUGIN_DIR . '/vk-add-fonts-for-block-editor/vk-add-fonts-for-block-editor.php',
-			'metadata_url' => 'https://github.com/vektor-inc/vk-add-fonts-for-block-editor/',
+			'metadata_url' => 'https://github.com/vektor-inc/vk-add-fonts-for-block-editor',
 			'license_key' => '',
 			'license_from' => '',
 			'branch'      => 'main',
