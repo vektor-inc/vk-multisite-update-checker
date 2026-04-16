@@ -1,4 +1,4 @@
-name: Release
+name: Release on VWS
 on:
   push:
     tags:
@@ -25,3 +25,14 @@ jobs:
       with:
         generate_release_notes: true
         files: ${{ env.plugin_name }}.zip
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@5.2.1
+      with:
+        switches: -avzr
+        path: ${{ env.plugin_name }}.zip
+        remote_path: ${{ secrets.DEPLOY_PATH_VWS }}
+        remote_host: ${{ secrets.DEPLOY_HOST_VWS }}
+        remote_port: ${{ secrets.DEPLOY_PORT_VWS }}
+        remote_user: ${{ secrets.DEPLOY_USER_VWS }}
+        remote_key: ${{ secrets.DEPLOY_KEY_VWS }}
+        remote_key_pass: ${{ secrets.DEPLOY_KEYPASS_VWS }}
