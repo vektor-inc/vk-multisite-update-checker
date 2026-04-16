@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VK Multisite Update Checker
  * Description: マルチサイトのネットワーク管理画面で VK 製品（テーマ・プラグイン）の更新通知を受け取れるようにする軽量プラグイン。サイトネットワークで有効化して使用してください。
- * Version: 0.5.0
+ * Version: 0.6.0
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Network: true
@@ -39,6 +39,10 @@ function vk_multisite_update_checker_init() {
 			WP_PLUGIN_DIR . '/vk-add-fonts-for-block-editor/vendor/autoload.php',
 			WP_PLUGIN_DIR . '/vk-filter-search-pro/vendor/autoload.php',
 			WP_CONTENT_DIR . '/themes/smaveksive/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/vk-fullsite-installer/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/vk-video-block-pro/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/lightning-video-unit/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/vk-ai-editmate/vendor/autoload.php',
 		);
 		$loaded = false;
 		foreach ( $autoload_candidates as $autoload ) {
@@ -218,6 +222,46 @@ function vk_multisite_update_checker_init() {
 			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=smaveksive',
 			'license_key' => 'smaveksive-license-key',
 			'license_from' => 'option',
+		),
+		// VK FullSite Installer プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'vk-fullsite-installer',
+			'check_file'  => WP_PLUGIN_DIR . '/vk-fullsite-installer/vk-fullsite-installer.php',
+			'main_file'   => WP_PLUGIN_DIR . '/vk-fullsite-installer/vk-fullsite-installer.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=vk-fullsite-installer',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// VK Video Block Pro プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'vk-video-block-pro',
+			'check_file'  => WP_PLUGIN_DIR . '/vk-video-block-pro/vk-video-block-pro.php',
+			'main_file'   => WP_PLUGIN_DIR . '/vk-video-block-pro/vk-video-block-pro.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=vk-video-block-pro',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// Lightning Video Unit プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'lightning-video-unit',
+			'check_file'  => WP_PLUGIN_DIR . '/lightning-video-unit/lightning-video-unit.php',
+			'main_file'   => WP_PLUGIN_DIR . '/lightning-video-unit/lightning-video-unit.php',
+			'metadata_url' => 'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-video-unit',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// VK AI EditMate プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'vk-ai-editmate',
+			'check_file'  => WP_PLUGIN_DIR . '/vk-ai-editmate/vk-ai-editmate.php',
+			'main_file'   => WP_PLUGIN_DIR . '/vk-ai-editmate/vk-ai-editmate.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=vk-ai-editmate',
+			'license_key' => '',
+			'license_from' => '',
 		),
 	);
 
