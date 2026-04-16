@@ -15,6 +15,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+* [ 機能追加 ] VK AB Testing / VK Add Fonts for Block Editor / VK Filter Search Pro プラグインを更新通知の対応製品に追加
+* [ 機能追加 ] Smaveksive テーマを更新通知の対応製品に追加
+
+= 0.4.0 =
 * [ 機能追加 ] Lightning G3 Vekuan / Skin Charm / Skin Fort / Skin Pale / Skin Variety / Skin JPN Style プラグインを更新通知の対応製品に追加
 
 = 0.3.0 =
