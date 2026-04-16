@@ -1,0 +1,27 @@
+name: Release
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+env:
+  plugin_name: vk-multisite-update-checker
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - name: Create zip
+      run: |
+        mkdir ${{ env.plugin_name }}
+        cp vk-multisite-update-checker.php readme.txt README.md ${{ env.plugin_name }}/
+        zip -r ${{ env.plugin_name }}.zip ${{ env.plugin_name }}
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        generate_release_notes: true
+        files: ${{ env.plugin_name }}.zip
