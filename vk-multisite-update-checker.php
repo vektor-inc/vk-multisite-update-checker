@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VK Multisite Update Checker
  * Description: マルチサイトのネットワーク管理画面で VK 製品（テーマ・プラグイン）の更新通知を受け取れるようにする軽量プラグイン。サイトネットワークで有効化して使用してください。
- * Version: 0.3.0
+ * Version: 0.4.0
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Network: true
@@ -29,6 +29,12 @@ function vk_multisite_update_checker_init() {
 			WP_PLUGIN_DIR . '/lightning-g3-pro-unit/vendor/autoload.php',
 			WP_PLUGIN_DIR . '/vk-blocks-pro/vendor/autoload.php',
 			WP_PLUGIN_DIR . '/lightning-g3-evergreen/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/lightning-g3-vekuan/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/lightning-skin-charm/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/lightning-skin-fort/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/lightning-skin-pale/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/lightning-skin-variety/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/lightning-skin-jpnstyle/vendor/autoload.php',
 		);
 		$loaded = false;
 		foreach ( $autoload_candidates as $autoload ) {
@@ -105,6 +111,66 @@ function vk_multisite_update_checker_init() {
 			'check_file'  => WP_PLUGIN_DIR . '/lightning-g3-evergreen/lightning-g3-evergreen.php',
 			'main_file'   => WP_PLUGIN_DIR . '/lightning-g3-evergreen/lightning-g3-evergreen.php',
 			'metadata_url' => 'https://vws.vektor-inc.co.jp/updates/?action=get_metadata&slug=lightning-g3-evergreen',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// Lightning G3 Vekuan プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'lightning-g3-vekuan',
+			'check_file'  => WP_PLUGIN_DIR . '/lightning-g3-vekuan/lightning-g3-vekuan.php',
+			'main_file'   => WP_PLUGIN_DIR . '/lightning-g3-vekuan/lightning-g3-vekuan.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=lightning-g3-vekuan',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// Lightning Skin Charm プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'lightning-skin-charm',
+			'check_file'  => WP_PLUGIN_DIR . '/lightning-skin-charm/lightning_skin_charm.php',
+			'main_file'   => WP_PLUGIN_DIR . '/lightning-skin-charm/lightning_skin_charm.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=lightning-skin-charm',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// Lightning Skin Fort プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'lightning-skin-fort',
+			'check_file'  => WP_PLUGIN_DIR . '/lightning-skin-fort/lightning-skin-fort.php',
+			'main_file'   => WP_PLUGIN_DIR . '/lightning-skin-fort/lightning-skin-fort.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=lightning-skin-fort',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// Lightning Skin Pale プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'lightning-skin-pale',
+			'check_file'  => WP_PLUGIN_DIR . '/lightning-skin-pale/lightning-skin-pale.php',
+			'main_file'   => WP_PLUGIN_DIR . '/lightning-skin-pale/lightning-skin-pale.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=lightning-skin-pale',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// Lightning Skin Variety プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'lightning-skin-variety',
+			'check_file'  => WP_PLUGIN_DIR . '/lightning-skin-variety/lightning_skin_variety.php',
+			'main_file'   => WP_PLUGIN_DIR . '/lightning-skin-variety/lightning_skin_variety.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=lightning-skin-variety',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// Lightning Skin JPN Style プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'lightning-skin-jpnstyle',
+			'check_file'  => WP_PLUGIN_DIR . '/lightning-skin-jpnstyle/lightning_skin_jpnstyle.php',
+			'main_file'   => WP_PLUGIN_DIR . '/lightning-skin-jpnstyle/lightning_skin_jpnstyle.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=lightning-skin-jpnstyle',
 			'license_key' => '',
 			'license_from' => '',
 		),

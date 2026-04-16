@@ -15,6 +15,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+* [ 機能追加 ] Lightning G3 Vekuan / Skin Charm / Skin Fort / Skin Pale / Skin Variety / Skin JPN Style プラグインを更新通知の対応製品に追加
+
+= 0.3.0 =
 * [ 機能追加 ] Lightning G3 Evergreen プラグインを更新通知の対応製品に追加
 
 = 0.2.0 =
