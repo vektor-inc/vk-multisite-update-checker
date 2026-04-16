@@ -60,14 +60,6 @@ function vk_multisite_update_checker_init() {
 		}
 	}
 
-	// このプラグイン自身の更新チェック.
-	$self_checker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-		'https://github.com/vektor-inc/vk-multisite-update-checker',
-		__FILE__,
-		'vk-multisite-update-checker'
-	);
-	$self_checker->setBranch( 'main' );
-
 	$products = array(
 		// Lightning Pro テーマ.
 		array(
