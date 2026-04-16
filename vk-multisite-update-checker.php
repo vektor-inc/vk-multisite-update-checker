@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VK Multisite Update Checker
  * Description: マルチサイトのネットワーク管理画面で VK 製品（テーマ・プラグイン）の更新通知を受け取れるようにする軽量プラグイン。サイトネットワークで有効化して使用してください。
- * Version: 0.4.0
+ * Version: 0.5.0
  * Author: Vektor,Inc.
  * Author URI: https://vektor-inc.co.jp
  * Network: true
@@ -35,6 +35,10 @@ function vk_multisite_update_checker_init() {
 			WP_PLUGIN_DIR . '/lightning-skin-pale/vendor/autoload.php',
 			WP_PLUGIN_DIR . '/lightning-skin-variety/vendor/autoload.php',
 			WP_PLUGIN_DIR . '/lightning-skin-jpnstyle/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/vk-ab-testing/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/vk-add-fonts-for-block-editor/vendor/autoload.php',
+			WP_PLUGIN_DIR . '/vk-filter-search-pro/vendor/autoload.php',
+			WP_CONTENT_DIR . '/themes/smaveksive/vendor/autoload.php',
 		);
 		$loaded = false;
 		foreach ( $autoload_candidates as $autoload ) {
@@ -173,6 +177,47 @@ function vk_multisite_update_checker_init() {
 			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=lightning-skin-jpnstyle',
 			'license_key' => '',
 			'license_from' => '',
+		),
+		// VK AB Testing プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'vk-ab-testing',
+			'check_file'  => WP_PLUGIN_DIR . '/vk-ab-testing/vk-ab-testing.php',
+			'main_file'   => WP_PLUGIN_DIR . '/vk-ab-testing/vk-ab-testing.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=vk-ab-testing',
+			'license_key' => 'vk_ab_testing_license_key',
+			'license_from' => 'option',
+		),
+		// VK Add Fonts for Block Editor プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'vk-add-fonts-for-block-editor',
+			'check_file'  => WP_PLUGIN_DIR . '/vk-add-fonts-for-block-editor/vk-add-fonts-for-block-editor.php',
+			'main_file'   => WP_PLUGIN_DIR . '/vk-add-fonts-for-block-editor/vk-add-fonts-for-block-editor.php',
+			'metadata_url' => 'https://github.com/vektor-inc/vk-add-fonts-for-block-editor',
+			'license_key' => '',
+			'license_from' => '',
+			'branch'      => 'main',
+		),
+		// VK Filter Search Pro プラグイン.
+		array(
+			'type'        => 'plugin',
+			'slug'        => 'vk-filter-search-pro',
+			'check_file'  => WP_PLUGIN_DIR . '/vk-filter-search-pro/vk-filter-search-pro.php',
+			'main_file'   => WP_PLUGIN_DIR . '/vk-filter-search-pro/vk-filter-search-pro.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=vk-filter-search-pro',
+			'license_key' => '',
+			'license_from' => '',
+		),
+		// Smaveksive テーマ.
+		array(
+			'type'        => 'theme',
+			'slug'        => 'smaveksive',
+			'check_file'  => WP_CONTENT_DIR . '/themes/smaveksive/style.css',
+			'main_file'   => WP_CONTENT_DIR . '/themes/smaveksive/functions.php',
+			'metadata_url' => 'https://license.vektor-inc.co.jp/check/?action=get_metadata&slug=smaveksive',
+			'license_key' => 'smaveksive-license-key',
+			'license_from' => 'option',
 		),
 	);
 
