@@ -15,6 +15,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+* [ 機能追加 ] VK FullSite Installer / VK Video Block Pro / Lightning Video Unit / VK AI EditMate プラグインを更新通知の対応製品に追加
+
+= 0.5.0 =
 * [ 機能追加 ] VK AB Testing / VK Add Fonts for Block Editor / VK Filter Search Pro プラグインを更新通知の対応製品に追加
 * [ 機能追加 ] Smaveksive テーマを更新通知の対応製品に追加
 
