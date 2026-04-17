@@ -23,13 +23,9 @@ WordPress マルチサイトのネットワーク管理画面はメインサイ�
 2. WordPress のネットワーク管理画面 > プラグイン > 新規追加 > プラグインのアップロード からインストール
 3. **サイトネットワークで有効化**
 
-## デプロイ
+## リリース
 
-タグを push すると GitHub Actions が自動で以下を実行します:
-
-1. プラグインファイルを ZIP に梱包
-2. GitHub Release を作成（ZIP 添付）
-3. VWS サーバーに rsync でデプロイ
+タグを push すると GitHub Actions が自動で ZIP を作成し GitHub Release を発行します。
 
 ```bash
 git tag 0.7.0
