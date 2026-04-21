@@ -23,6 +23,15 @@ WordPress マルチサイトのネットワーク管理画面はメインサイ�
 2. WordPress のネットワーク管理画面 > プラグイン > 新規追加 > プラグインのアップロード からインストール
 3. **サイトネットワークで有効化**
 
+## リリース
+
+タグを push すると GitHub Actions が自動で ZIP を作成し GitHub Release を発行します。
+
+```bash
+git tag 0.7.0
+git push origin 0.7.0
+```
+
 ## 対応製品
 
 ### テーマ
